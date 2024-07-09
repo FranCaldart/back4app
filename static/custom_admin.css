@@ -1,0 +1,84 @@
+
+
+
+ .mb-6 {
+  margin-bottom: 0;
+}
+  
+td.field-produto select{
+  width: 120px;
+ 
+}
+
+td.field-item input, td.field-quantidade input, td.field-gramatura input, td.field-valor-ref input{
+    width: 80px; /* Define uma largura fixa para os campos de entrada */
+    height: 30px; /* Define uma altura fixa para os campos de entrada */
+    padding: 5px; /* Adiciona espaçamento interno */
+    font-size: 12px; /* Define o tamanho da fonte */
+    border: 1px solid #ccc; /* Define a borda */
+    border-radius: 4px; /* Define a curvatura dos cantos */
+    text-align: center; /* Centraliza o texto nos campos de entrada */
+  
+}
+
+  
+
+  
+
+  label.field-municipio{
+    font-size: 13px;
+    height: 40px;
+    width: 80px;
+
+  }
+
+  div.field-municipio select {
+    height: fit-content;
+    width: 180px;
+    font-size: 14px;
+  }
+  div.field-numero input{
+    width: 100px;
+  }
+
+  div.field-nome input{
+    width: fit-content;
+  }
+  
+
+  
+  .font-semibold {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  
+  
+
+  .related-widget-wrapper-link{
+    height: 1.35rem;
+    width: 1.35rem;
+  }
+  
+
+  .related-widget-wrapper {
+    flex-wrap:wrap!important;
+    align-self: center;
+   
+  }
+  
+  .flex-row {
+    flex-direction: row;
+    font-size: 12px;
+    text-align: center;
+  }
+ 
+
+  .flex{
+    padding: 0.25rem;
+  }
+
+  .font-medium{
+    font-size: 12px;
+    padding: 0.25rem;
+  }
