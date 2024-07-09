@@ -7,11 +7,11 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /sistema
 
 # Copy requirements file and install dependencies
-COPY requirements.txt requirements.txt
+COPY requirements.txt /sistema
 RUN pip install -r requirements.txt
 
 # Copy the rest of the project files
-COPY . .
+COPY . /sistema/
 
 # Expose the server port
 EXPOSE 8000
