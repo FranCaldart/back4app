@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-y7^o$2@(kr4@+9h1-p90cqfmyys$s*fc@+s5b8e^ukm8f167pg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sistema-qp8nrsq9.b4a.run','node83a.containers.back4app.com']
+ALLOWED_HOSTS = ['https://sistema-qp8nrsq9.b4a.run','node83a.containers.back4app.com']
 
 
 # Application definition
