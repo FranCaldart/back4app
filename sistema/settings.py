@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-y7^o$2@(kr4@+9h1-p90cqfmyys$s*fc@+s5b8e^ukm8f167pg
 DEBUG = True
 
 ALLOWED_HOSTS = ['https://sistema-qp8nrsq9.b4a.run','node83a.containers.back4app.com','sistema-qp8nrsq9.b4a.run']
-CSRF_TRUSTED_ORIGINS = ['https://sistema-qp8nrsq9.b4a.run','node83a.containers.back4app.com','sistema-qp8nrsq9.b4a.run']
+CSRF_TRUSTED_ORIGINS = ['https://*.sistema-qp8nrsq9.b4a.run','node83a.containers.back4app.com']
 
 # Application definition
 
