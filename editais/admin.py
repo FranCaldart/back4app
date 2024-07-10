@@ -38,9 +38,11 @@ class MunicipioAdmin(ModelAdmin,ImportExportModelAdmin):
     export_form_class = ExportForm
     change_list_template = "admin/change_list.html"
     
-class ItemInline(TabularInline):
+class ItemInline(TabularInline,ImportExportModelAdmin):
     model = Item
     extra = 1
+    import_form_class = ImportForm
+    export_form_class = ExportForm 
     class Media:
         css = {
             "all":["custom_admin.css"],
