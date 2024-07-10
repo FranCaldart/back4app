@@ -55,7 +55,7 @@ class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
         ("municipio", FieldTextFilter),
         )
     import_form_class = ImportForm
-    export_form_class = ExportForm
+    export_form_class = ExportForm 
     
 
 class PrecoInline(TabularInline):
