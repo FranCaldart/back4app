@@ -62,8 +62,9 @@ class Item(models.Model):
 
     valor_total = models.DecimalField(max_digits=20, decimal_places=3,default=0.00)
     def save(self, *args, **kwargs):
-        self.dif = self.valor_arrematado - self.valor_minimo
-        super().save(*args, **kwargs)
+        if self.quantidade is not None and self.valor_arrematado is not None:
+            self.valor_total = self.quantidade * self.valor_arrematado
+        super().save( *args, **kwargs)
 
 
     ganhador = models.CharField(max_length=50, blank= True, null = True)
