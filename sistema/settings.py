@@ -85,9 +85,17 @@ WSGI_APPLICATION = "sistema.wsgi.application"
 DATABASE_URL = os.getenv("postgresql://postgres:mhwklDluNXdiKdQwYUwXnaUicWKqSnPr@monorail.proxy.rlwy.net:54043/railway")
 
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "OPTIONS": {
+            "service": "host=monorail.proxy.rlwy.net
+            user=postgres
+            dbname=railway
+            port=54043",
+            "passfile": "monorail.proxy.rlwy.net:54043:railway:postgres:mhwklDluNXdiKdQwYUwXnaUicWKqSnPr",
+        },
+    }
 }
-
 
 
 
