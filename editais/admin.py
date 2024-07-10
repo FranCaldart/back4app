@@ -50,14 +50,17 @@ class ItemInline(TabularInline):
 
 class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
     inlines = [ItemInline]
-    list_display = ('municipio', 'data_pregao') 
+    list_display = ('municipio', 'data_pregao','valor_total_display') 
     list_filter_submit = True 
     list_filter = (
         ("data_pregao", DateRangeQuickSelectListFilterBuilder()),
         ("municipio", FieldTextFilter),
         )
     import_form_class = ImportForm
-    export_form_class = ExportForm 
+    export_form_class = ExportForm
+    def valor_total_display(self, obj):
+        return obj.valor_total()
+    valor_total_display.short_description = 'Valor Total'
     
 
 class PrecoInline(TabularInline):
