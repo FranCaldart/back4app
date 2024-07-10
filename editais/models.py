@@ -44,9 +44,9 @@ class Item(models.Model):
                                    ('g','g'),
                                    ])
     gramatura = models.CharField(max_length=10)
-    valor_referencia = models.DecimalField(max_digits=10, decimal_places=4, blank= True, null = True)
-    valor_minimo = models.DecimalField(max_digits=10, decimal_places=3, blank= True, null = True)
-    valor_arrematado = models.DecimalField(max_digits=10, decimal_places=3, blank= True, null = True)
+    valor_referencia = models.DecimalField(max_digits=10, decimal_places=4,default=0.00)
+    valor_minimo = models.DecimalField(max_digits=10, decimal_places=3, default=0.00)
+    valor_arrematado = models.DecimalField(max_digits=10, decimal_places=3, default=0.00 )
     opcoes_colocacao= [
         ('1','1º'),
         ('2','2º'),
@@ -60,7 +60,7 @@ class Item(models.Model):
 
     colocacao = models.CharField(max_length=2, choices=opcoes_colocacao, blank=True, null=True)
 
-    valor_total = models.DecimalField(max_digits=20, decimal_places=3, blank= True, null = True)
+    valor_total = models.DecimalField(max_digits=20, decimal_places=3,default=0.00)
     def save(self, *args, **kwargs):
         self.dif = self.valor_arrematado - self.valor_minimo
         super().save(*args, **kwargs)
