@@ -34,6 +34,10 @@ class Edital(models.Model):
         return f"{self.municipio} - {self.numero}"
     class Meta:
          verbose_name_plural  = 'Editais'
+    def valor_total(self):
+        total = self.item_set.aggregate(total=models.Sum('valor_total'))['total']
+        return total if total is not None else 0.00
+
 
 class Item(models.Model):
     edital = models.ForeignKey(Edital, on_delete=models.CASCADE)
