@@ -61,10 +61,10 @@ class Item(models.Model):
     colocacao = models.CharField(max_length=2, choices=opcoes_colocacao, blank=True, null=True)
 
     valor_total = models.DecimalField(max_digits=20, decimal_places=3, blank= True, null = True)
-    def save(self, force_insert=False, force_update=False, *args, **kwargs):
-        if self.quantidade is not None and self.valor_arrematado is not None:
-            self.valor_total = self.quantidade * self.valor_arrematado
-        super().save(force_insert=force_insert, force_update=force_update, *args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.dif = self.valor_arrematado - self.valor_minimo
+        super().save(*args, **kwargs)
+
 
     ganhador = models.CharField(max_length=50, blank= True, null = True)
     marca = models.CharField(max_length=50, blank= True, null = True)
