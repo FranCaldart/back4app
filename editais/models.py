@@ -17,7 +17,10 @@ class Produto(models.Model):
     descricao = models.TextField()
     def __str__(self):
         return f"{self.produto}"
-
+    def valor_total(self):
+        total = self.item_set.aggregate(total=models.Sum('valor_total'))['total']
+        return total if total is not None else 0.00
+        
 class Preco(models.Model):
     produto = models.ForeignKey(Produto, on_delete= models.CASCADE)
     quantidade = models.CharField(max_length = 50)
