@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-y7^o$2@(kr4@+9h1-p90cqfmyys$s*fc@+s5b8e^ukm8f167pg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['node83a.containers.back4app.com','sistema-qp8nrsq9.b4a.run']
+ALLOWED_HOSTS = ['node83a.containers.back4app.com','sistema-qp8nrsq9.b4a.run','web-production-7292.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://*.sistema-qp8nrsq9.b4a.run']
 
 # Application definition
