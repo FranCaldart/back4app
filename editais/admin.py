@@ -20,7 +20,7 @@ from unfold.contrib.import_export.forms import ExportForm, ImportForm, Selectabl
 from .models import Municipio, Edital, Produto, Item, Preco
 
 
-class MunicipioAdmin(ModelAdmin):
+class MunicipioAdmin(ModelAdmin,ImportExportModelAdmin):
     list_display = ('nome', 'view_editais')  # Include the custom method in list display
 
     def view_editais(self, obj):
@@ -34,6 +34,8 @@ class MunicipioAdmin(ModelAdmin):
         return format_html('<br>'.join(links))
 
     view_editais.short_description = 'Editais'
+    import_form_class = ImportForm
+    export_form_class = ExportForm
     change_list_template = "admin/change_list.html"
     
 class ItemInline(TabularInline):
@@ -46,7 +48,7 @@ class ItemInline(TabularInline):
 
 class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
     inlines = [ItemInline]
-    list_display = ('municipio', 'data_pregao') 
+    list_display = ('municipio', 'data_pregao','valor_total') 
     list_filter_submit = True 
     list_filter = (
         ("data_pregao", DateRangeQuickSelectListFilterBuilder()),
@@ -59,9 +61,10 @@ class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
 class PrecoInline(TabularInline):
     model = Preco
     extra = 0
-class ProdutoAdmin(ModelAdmin):
+class ProdutoAdmin(ModelAdmin,ImportExportModelAdmin):
     inlines = (PrecoInline,)
-
+    import_form_class = ImportForm
+    export_form_class = ExportForm
 
 
 admin.site.site_header = "Controle de Editais Nutri C"
