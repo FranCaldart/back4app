@@ -38,7 +38,7 @@ class MunicipioAdmin(ModelAdmin,ImportExportModelAdmin):
     export_form_class = ExportForm
     change_list_template = "admin/change_list.html"
     
-class ItemInline(TabularInline,ImportExportModelAdmin):
+class ItemInline(TabularInline):
     model = Item
     extra = 1
     import_form_class = ImportForm
