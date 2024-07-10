@@ -44,7 +44,7 @@ class ItemInline(TabularInline):
             "all":["custom_admin.css"],
         }
 
-class EditalAdmin(ModelAdmin):
+class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
     inlines = [ItemInline]
     list_display = ('municipio', 'data_pregao') 
     list_filter_submit = True 
