@@ -88,7 +88,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {
-            "service": "host=monorail.proxy.rlwy.net
+            "service": 
+            "host=monorail.proxy.rlwy.net
             user=postgres
             dbname=railway
             port=54043",
