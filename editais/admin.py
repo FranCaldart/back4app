@@ -50,7 +50,7 @@ class ItemInline(TabularInline):
 
 class EditalAdmin(ModelAdmin,ImportExportModelAdmin):
     inlines = [ItemInline]
-    list_display = ('municipio', 'data_pregao','valor_total') 
+    list_display = ('municipio', 'data_pregao') 
     list_filter_submit = True 
     list_filter = (
         ("data_pregao", DateRangeQuickSelectListFilterBuilder()),
