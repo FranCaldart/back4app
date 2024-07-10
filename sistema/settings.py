@@ -84,7 +84,7 @@ WSGI_APPLICATION = "sistema.wsgi.application"
 
 DATABASES =  {
     "default":dj_database_url.config {
-        default = 'postgresql://postgres:mhwklDluNXdiKdQwYUwXnaUicWKqSnPr@monorail.proxy.rlwy.net:54043/railway',
+        default : 'postgresql://postgres:mhwklDluNXdiKdQwYUwXnaUicWKqSnPr@monorail.proxy.rlwy.net:54043/railway',
         conn_max_age = 600,
         ssl_require = not DEBUG
         
